@@ -6,7 +6,7 @@ import './App.css'
 function App() {
   return (
     <div className='container'>
-      <h1> Bot Realm X </h1>
+      <h1 id='header'> Bot Realm X </h1>
       <NavBar className='nav'/>
       <BotList/>
     </div>

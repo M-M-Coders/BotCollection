@@ -12,11 +12,11 @@ function BotList() {
         fetchBots()
     }, [])
     return (
-        <div>
+        <div className="bot-list-container">
             {bots.map((bots, index) => {
                 return (
-                    <div key={index}>
-                        <img src={bots.avatar_url}/>
+                    <div key={index} className="bot-item">
+                        <img src={bots.avatar_url} alt={`Bot ${index}`}/>
                         <p>Name:{bots.name}</p>
                         <p>Health:{bots.health}</p>
                         <p>Damage:{bots.damage}</p>
