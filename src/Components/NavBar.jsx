@@ -2,7 +2,7 @@ import React from 'react'
 
 const linkStyles = {
   display: "inline-block",
-  width: "50px",
+  width: "100px",
   padding: "12px",
   margin: "0 6px 6px",
   background: "blue",
@@ -14,8 +14,8 @@ const linkStyles = {
 function NavBar() {
   return (
     <div>
-      <a href='home' style={linkStyles}> Collection</a>
-      <a href='home' style={linkStyles}>  Army</a>
+      <a href='home' style={linkStyles}>Bot Collection</a>
+      <a href='home' style={linkStyles}>Your Bot Army</a>
     </div>
   )
 }
