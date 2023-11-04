@@ -26,7 +26,7 @@ function BotList() {
                         <p>Created_at:{bots.created_at}</p>
                         <p>Updated_at:{bots.updated_at}</p>
                         <button className='btn'>X</button> 
-                        <button>Add to Army</button>
+                        <button className='button'>Add to Army</button>
                     </div>
                     )
             })}
