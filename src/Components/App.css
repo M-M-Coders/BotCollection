@@ -24,6 +24,9 @@
     border-radius: 5px;
     cursor: pointer;
   }
+  .button:hover {
+    background-color: #a488a8;
+}
 #header{
     text-align: center;
 }
@@ -43,5 +46,16 @@
     background-color: #f9f9f9;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .selected-bots-container {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto; 
+  }
+  
+  .army-bot {
+    margin-right: 10px; 
   }
   
