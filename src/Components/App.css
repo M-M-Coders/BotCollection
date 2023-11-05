@@ -49,13 +49,15 @@
     overflow: hidden;
     text-overflow: ellipsis;
   }
-  .selected-bots-container {
+  .selected-bots {
     display: flex;
     flex-direction: row;
     overflow-x: auto; 
+    background-color: wheat;
   }
   
   .army-bot {
     margin-right: 10px; 
+    background-color: wheat;
   }
   

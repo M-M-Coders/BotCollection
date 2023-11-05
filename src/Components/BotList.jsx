@@ -12,7 +12,6 @@ function BotList() {
         }
         fetchBots()
     }, [])
-
     const handleDelete = async (botsId) => {
         try {
           const response = await fetch(`http://localhost:3000/bots/${botsId}`, {
@@ -22,12 +21,11 @@ function BotList() {
             throw new Error('Network response was not ok');
           }
           // Remove the deleted transaction from the state
-          setBots(bots.filter(bots => bots.id !== botsId));
+          setBots(bots.filter(transaction => bots.id !== botsId));
         } catch (error) {
           console.error('Error deleting transaction:', error);
         }
       };
-
       const addToArmy = (bot) => {
         if (!army.some(b => b.id === bot.id)) {
           setArmy([...army, bot]);
@@ -38,12 +36,11 @@ function BotList() {
         const updatedArmy = army.filter(b => b.id !== bot.id);
         setArmy(updatedArmy);
       };
-
-    return (
+      return (
         <div>
           <div className="army-container">
             <h2>Your Bot Army</h2>
-            <div className="selected-bots-container">
+            <div className="selected-bots">
               {army.map((bot, index) => (
                 <div key={index} className="army-bot">
                   <img src={bot.avatar_url} alt={`Bot ${index}`} />
@@ -76,5 +73,6 @@ function BotList() {
           </div>
         </div>
       );
-    }
-export default BotList;
+}
+
+export default BotList
