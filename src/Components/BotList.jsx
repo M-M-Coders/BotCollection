@@ -13,19 +13,19 @@ function BotList() {
         fetchBots()
     }, [])
     const handleDelete = async (botsId) => {
-        try {
-          const response = await fetch(`http://localhost:3000/bots/${botsId}`, {
-            method: 'DELETE',
-          });
-          if (!response.ok) {
-            throw new Error('Network response was not ok');
-          }
-          // Remove the deleted transaction from the state
-          setBots(bots.filter(transaction => bots.id !== botsId));
-        } catch (error) {
-          console.error('Error deleting transaction:', error);
+      try {
+        const response = await fetch(`http://localhost:3000/bots/${botsId}`, {
+          method: 'DELETE',
+        });
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
         }
-      };
+        // Remove the deleted transaction from the state
+        setBots(bots.filter(bots => bots.id !== botsId));
+      } catch (error) {
+        console.error('Error deleting transaction:', error);
+      }
+    };
       const addToArmy = (bot) => {
         if (!army.some(b => b.id === bot.id)) {
           setArmy([...army, bot]);
@@ -66,8 +66,8 @@ function BotList() {
                 <p>Phrase: {bot.catchphrase}</p>
                 <p>Created_at: {bot.created_at}</p>
                 <p>Updated_at: {bot.updated_at}</p>
-                <button className='btn' onClick={() => handleEnlist(bot)}>X</button>
-                <button className='button' onClick={() => addToArmy(bot)}>Add to Army</button>
+                <button className='btn' onClick={() => handleDelete(bot.id)}>X</button>
+                <button className='button'  onClick={() => {handleDelete(bot.id);addToArmy(bot);}}>Add to Army</button>
               </div>
             ))}
           </div>
