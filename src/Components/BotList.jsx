@@ -21,7 +21,7 @@ function BotList() {
           throw new Error('Network response was not ok');
         }
         // Remove the deleted transaction from the state
-        setBots(bots.filter(bots => bots.id !== botsId));
+        setBots(bots.filter(transaction => bots.id !== botsId));
       } catch (error) {
         console.error('Error deleting transaction:', error);
       }
