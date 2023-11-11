@@ -20,10 +20,10 @@ function BotList() {
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        // Remove the deleted transaction from the state
-        setBots(bots.filter(transaction => bots.id !== botsId));
+        // Remove the deleted bot from the state
+        setBots(bots.filter(bots => bots.id !== botsId));
       } catch (error) {
-        console.error('Error deleting transaction:', error);
+        console.error('Error deleting bot:', error);
       }
     };
       const addToArmy = (bot) => {
