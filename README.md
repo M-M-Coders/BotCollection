@@ -1,5 +1,5 @@
 # Live Link
-To access the app, visit https://bot-collection.vercel.app/
+To access the app, visit https://bot-collection-sts2.vercel.app/
 
 # Instructions
 For this project, you’ll be building out a React application that displays a
